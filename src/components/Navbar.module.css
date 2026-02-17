@@ -1,0 +1,72 @@
+.navbar {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+:global(body.dark) .navbar {
+    background: rgba(30, 30, 30, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+.title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    color: #1f9751;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title a {
+    color: #1f9751;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+:global(body.dark) .title a {
+    color: #4ade80;
+}
+
+.navbar a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #1f9751;
+}
+
+:global(body.dark) .navbar a {
+    color: #e0e0e0;
+}
+
+:global(body.dark) .navbar a:hover {
+    color: #4ade80;
+}
+
+.navbar button {
+    margin-left: 20px;
+}

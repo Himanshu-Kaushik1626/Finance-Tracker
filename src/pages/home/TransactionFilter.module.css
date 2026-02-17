@@ -1,0 +1,54 @@
+.filter_nav {
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+}
+
+.filter_nav button {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    color: #555;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.filter_nav button.active {
+    color: #fff;
+    background-color: #1f9751;
+    box-shadow: 0 4px 8px rgba(31, 151, 81, 0.3);
+}
+
+.filter_nav button:hover:not(.active) {
+    background-color: #f4f4f4;
+}
+
+:global(body.dark) .filter_nav {
+    background-color: #333;
+    /* Dark background for nav */
+    border: 1px solid #444;
+}
+
+:global(body.dark) .filter_nav button {
+    color: #ccc;
+}
+
+:global(body.dark) .filter_nav button:hover:not(.active) {
+    background-color: #444;
+}
+
+:global(body.dark) .filter_nav button.active {
+    background-color: #4ade80;
+    /* Lighter green for dark mode */
+    color: #121212;
+}

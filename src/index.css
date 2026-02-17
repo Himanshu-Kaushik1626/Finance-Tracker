@@ -1,0 +1,198 @@
+/* Global variables */
+:root {
+  --primary-color: #1f9751;
+  --bg-gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --bg-gradient-dark: linear-gradient(135deg, #232526 0%, #414345 100%);
+  --text-color: #333;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  /* Semi-transparent */
+}
+
+body.dark {
+  --text-color: #f4f4f4;
+  --card-bg: rgba(50, 50, 50, 0.9);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  /* Cleaner font if available, fallback to system */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-gradient-light);
+  /* Gradient Background */
+  background-attachment: fixed;
+  /* Fix gradient on scroll */
+  min-height: 100vh;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background: var(--bg-gradient-dark);
+}
+
+/* Navbar styles override for global classes if needed, or keeping it clean */
+nav {
+  background: #effaf0;
+}
+
+body.dark nav {
+  background: #222;
+  border-bottom: 1px solid #444;
+}
+
+body.dark nav a,
+body.dark nav span,
+body.dark nav button {
+  color: #f4f4f4;
+}
+
+/* Button styles */
+.btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  padding: 8px 12px;
+  color: var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Form Styles */
+label {
+  display: block;
+  margin: 24px auto;
+}
+
+label span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+  /* slightly larger */
+  text-transform: uppercase;
+  /* consistent style */
+  letter-spacing: 0.5px;
+}
+
+input,
+select {
+  padding: 10px;
+  /* larger padding */
+  border-radius: 5px;
+  /* softer corners */
+  border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+body.dark input,
+body.dark select {
+  background: #555;
+  border-color: #666;
+  color: white;
+}
+
+/* Form Container Styles */
+.login-form,
+.auth-form {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2,
+.auth-form h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.login-form label,
+.auth-form label {
+  margin: 20px 0;
+}
+
+.login-form input,
+.auth-form input {
+  width: 100%;
+}
+
+.login-form button,
+.auth-form button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.login-form .error,
+.auth-form .error {
+  color: #e74c3c;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Transaction List Global Styles */
+.transactions {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transactions li {
+  padding: 15px;
+  background: var(--card-bg);
+  /* Use variable */
+  color: var(--text-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+  /* Increased spacing */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow */
+  transition: transform 0.2s ease;
+  /* Hover effect */
+}
+
+.transactions li:hover {
+  transform: translateY(-2px);
+}
+
+.name {
+  font-size: 1.2em;
+  /* Emphasize name */
+  color: var(--text-color);
+  /* Correct color */
+  margin-bottom: 4px;
+  /* Spacing */
+  font-weight: 500;
+}
+
+.amount {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #555;
+}
+
+body.dark .amount {
+  color: #ccc;
+}
