@@ -1,12 +1,14 @@
 .filter_nav {
     margin: 30px auto;
-    background-color: #fff;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
     padding: 10px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     gap: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
     max-width: 600px;
 }
 
@@ -14,7 +16,7 @@
     background: transparent;
     border: none;
     font-family: inherit;
-    color: #555;
+    color: var(--text-secondary);
     font-size: 0.9em;
     font-weight: bold;
     cursor: pointer;
@@ -25,30 +27,31 @@
 
 .filter_nav button.active {
     color: #fff;
-    background-color: #1f9751;
-    box-shadow: 0 4px 8px rgba(31, 151, 81, 0.3);
+    background: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
 }
 
 .filter_nav button:hover:not(.active) {
-    background-color: #f4f4f4;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
 }
 
 :global(body.dark) .filter_nav {
-    background-color: #333;
-    /* Dark background for nav */
-    border: 1px solid #444;
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 :global(body.dark) .filter_nav button {
-    color: #ccc;
+    color: #94a3b8;
 }
 
 :global(body.dark) .filter_nav button:hover:not(.active) {
-    background-color: #444;
+    background: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
 }
 
 :global(body.dark) .filter_nav button.active {
-    background-color: #4ade80;
-    /* Lighter green for dark mode */
-    color: #121212;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(168, 85, 247, 0.3);
 }

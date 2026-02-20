@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
+import { useEffect } from 'react'
 
 // pages & components
 import Home from './pages/home/Home'
@@ -9,6 +10,25 @@ import Navbar from './components/Navbar'
 
 function App() {
     const { authIsReady, user } = useAuthContext()
+
+    // Dynamic Background Logic
+    useEffect(() => {
+        const hour = new Date().getHours()
+        const body = document.body
+
+        // Remove existing theme classes
+        body.classList.remove('theme-morning', 'theme-afternoon', 'theme-evening', 'theme-night')
+
+        if (hour >= 5 && hour < 12) {
+            body.classList.add('theme-morning')
+        } else if (hour >= 12 && hour < 17) {
+            body.classList.add('theme-afternoon')
+        } else if (hour >= 17 && hour < 20) {
+            body.classList.add('theme-evening')
+        } else {
+            body.classList.add('theme-night')
+        }
+    }, []) // Run once on mount
 
     return (
         <div className="App">

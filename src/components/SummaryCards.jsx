@@ -1,5 +1,6 @@
 import { useCollection } from "../hooks/useCollection"
 import { useAuthContext } from "../hooks/useAuthContext"
+import { FaWallet, FaArrowUp, FaArrowDown } from 'react-icons/fa'
 
 export default function SummaryCards() {
     const { user } = useAuthContext();
@@ -23,14 +24,17 @@ export default function SummaryCards() {
     return (
         <div className="summary">
             <div className="card">
+                <FaWallet className="card-icon" />
                 <h3>Balance</h3>
                 <p className="amount">${balance}</p>
             </div>
             <div className="card income">
+                <FaArrowUp className="card-icon" />
                 <h3>Income</h3>
                 <p className="amount">+${totalIncome}</p>
             </div>
             <div className="card expense">
+                <FaArrowDown className="card-icon" />
                 <h3>Expenses</h3>
                 <p className="amount">-${totalExpense}</p>
             </div>
